@@ -6,7 +6,7 @@ class VmLogo extends StatelessWidget {
   const VmLogo({Key? key}) : super(key: key);
 
   void launch() {
-    // 新しいページに遷移させる
+    // 各ボタンに対応したページにする Agent Map Weponの三つを予定
     Navigator.pushNamed('new-page');
   }
 
@@ -14,18 +14,15 @@ class VmLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        // 新しいページへのルートを追加
         'new-page': (context) => NewPage(),
       },
       home: Scaffold(
         appBar: AppBar(),
         body: Column(
           children: [
-            // ...
-
             Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 0), // 上に75ピクセルずらす
+                padding: const EdgeInsets.only(top: 0),
                 child: GestureDetector(
                   onTap: () {},
                   child: Image.asset(
