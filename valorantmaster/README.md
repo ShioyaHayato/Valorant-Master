@@ -1,16 +1,28 @@
-# valorantmaster
+アプリ名"Valorant Master"
 
-A new Flutter project.
+アプリの目的
+・valorantの上達を謳った動画や説明が様々なプラットフォームにあふれていて探しずらい
+・このアプリだけでvalonratの上達が出来るようになる
+・一緒にプレイするフレンドを見つける
 
-## Getting Started
+アプリの機能
+・各エージェントの解説
+・各マップの解説
+・各武器の長所、短所、有効な使用方法の解説
+・ユーザー情報の記載
 
-This project is a starting point for a Flutter application.
+今後の追加予定機能
+・フレンド申請機能
+　・ブロック機能
+　・DMの送信機能
+・フレンドを検索できる機能の追加
+　・ランク、使用エージェント、遊ぶ時間帯、プレイスタイル等の記入
+　・各設定からのソート検索機能 (例:ゴールドのオーメンを使用しているプレイヤーの検索)
+・SNSのURL連携機能
 
-A few resources to get you started if this is your first Flutter project:
+使用ソフト
+・flutter
+・Visual Studio Code
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+GitHub
+・https://github.com/ShioyaHayato
