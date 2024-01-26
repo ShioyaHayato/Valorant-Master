@@ -1,23 +1,17 @@
 import 'package:flutter/material.dart';
+//main.dartをインポートすることで、agent_pageからでもmainの情報を見に行くことが出来る
 
-class NextPage extends StatelessWidget {
+class AgentPage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('KBOYのFlutter大学'),
-      ),
-      body: Container(
-        child: ElevatedButton(
-          child: Text('次へ'),
-          onPressed: () {
-            // ここにボタンを押した時に呼ばれるコードを書く
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => NextPage()),
-            );
-          },
+        backgroundColor: Colors.red[900], //colorコードは#fffffじゃない、ややこし
+        title: const Text('Agents') //フォントを変更したい todo:
         ),
+      body: Center(
       ),
     );
   }

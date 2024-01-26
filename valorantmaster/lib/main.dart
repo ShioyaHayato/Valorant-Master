@@ -1,91 +1,91 @@
 import 'package:flutter/material.dart';
+import 'package:valorantmaster/agent_page.dart';
+import 'package:valorantmaster/map_page.dart';
+import 'package:valorantmaster/wepon_page.dart';
 
-void main() => runApp(VmLogo());
+//インポートは各ページのdartをインポートして見にいけるようにする
 
-class VmLogo extends StatelessWidget {
-  const VmLogo({Key? key}) : super(key: key);
 
-  void launch() {
-    // 各ボタンに対応したページにする Agent Map Weponの三つを予定
-    Navigator.pushNamed('new-page');
-  }
+
+//MyAppは名前は何でもいいけど、基本MyAppらしい、アプリを開いたときに一番最初に実行するコマンドが書かれてるっぽい
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      routes: {
-        'new-page': (context) => NewPage(),
-      },
-      home: Scaffold(
-        appBar: AppBar(),
+      home: HomePage(),
+    );
+  }
+}
+
+
+//これはメインページにあたるもの
+class HomePage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black12,   //まだわからないけどアプリ全体の背景を黒から画像にする todo:
         body: Column(
           children: [
             Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 0),
+              padding: const EdgeInsets.only(top: 30),
                 child: GestureDetector(
                   onTap: () {},
                   child: Image.asset(
-                    'images/vmIcon.png',
+                    'images/VmIcon.png',
                     width: 100,
                     height: 100,
                   ),
                 ),
               ),
             ),
-            const SizedBox(width: 60, height: 60),
+        
+            const SizedBox(height: 30),      
             Center(
               child: GestureDetector(
-                onTap: launch,
                 child: Image.asset(
                   'images/Agent.png',
-                  fit: BoxFit.fill,
-                ),
+                  fit: BoxFit.fill,),
+                  onTap: () {
+              Navigator.push(context,
+              MaterialPageRoute(builder: (context) =>  AgentPage()),
+              );
+            },
               ),
             ),
-            const SizedBox(
-              width: 20,
-              height: 20,
-            ),
+            const SizedBox(height: 20,),
             Center(
               child: GestureDetector(
-                onTap: launch,
                 child: Image.asset(
                   'images/Map.png',
-                  fit: BoxFit.fill,
+                  fit: BoxFit.fill,),
+                   onTap: () {
+              Navigator.push(context,
+              MaterialPageRoute(builder: (context) =>  MapPage()),
+              );
+            },
                 ),
               ),
-            ),
-            const SizedBox(
-              width: 20,
-              height: 20,
-            ),
+            
+            const SizedBox(height: 20,),
             Center(
               child: GestureDetector(
-                onTap: launch,
                 child: Image.asset(
                   'images/Wepon.png',
-                  fit: BoxFit.fill,
-                ),
+                  fit: BoxFit.fill,),
+                   onTap: () {
+              Navigator.push(context,
+              MaterialPageRoute(builder: (context) =>  WeponPage()),
+              );
+            },
               ),
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class NewPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('New Page'),
-      ),
-      body: Center(
-        child: Text('This is the new page!'),
-      ),
-    );
+      );
   }
 }
