@@ -21,7 +21,7 @@
 ・SNSのURL連携機能
 
 使用ソフト
-・fluttre
+・flutter
 ・Visual Studio Code
 
 GitHub
