@@ -9,7 +9,15 @@ class MapPage extends StatelessWidget {
     return Scaffold(
       appBar:
           AppBar(backgroundColor: Colors.red[900], title: const Text('Maps')),
-      body: const Center(),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/MainPage.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: const Center(),
+      ),
     );
   }
 }
