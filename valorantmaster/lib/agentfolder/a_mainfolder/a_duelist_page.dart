@@ -12,14 +12,38 @@ class DuelistPage extends StatelessWidget {
           backgroundColor: Colors.red[900], //colorコードは#fffffじゃない、ややこし
           title: const Text('Duelist') //フォントを変更したい todo:
           ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/MainPage.png'),
-            fit: BoxFit.cover,
+      body: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/MainPage.png'),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
-        ),
-        child: const Center(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 30, right: 20),
+                child: Image.asset(
+                  'images/Duelist.png',
+                  height: 150,
+                  width: 150,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30, left: 20),
+                child: Image.asset(
+                  'images/Duelist.png',
+                  height: 150,
+                  width: 150,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
