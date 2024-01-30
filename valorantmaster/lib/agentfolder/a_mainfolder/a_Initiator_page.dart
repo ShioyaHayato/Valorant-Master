@@ -15,9 +15,12 @@ class InitiatorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.red[900], //colorコードは#fffffじゃない、ややこし
-          title: const Text('Initiator') //フォントを変更したい todo:
-          ),
+        backgroundColor: Colors.red[900],
+        title: const Text('Initator'),
+        actions: [
+          Image.asset('images/AppberIcon.png'),
+        ],
+      ),     
       body: Stack(
         children: [
           Container(

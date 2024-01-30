@@ -7,8 +7,13 @@ class WeponPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          AppBar(backgroundColor: Colors.red[900], title: const Text('Wepons')),
+      appBar: AppBar( 
+        backgroundColor: Colors.red[900],
+        title: const Text('Wepon'),
+        actions: [
+          Image.asset('images/AppberIcon.png'),
+        ],
+      ), 
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

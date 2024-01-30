@@ -19,7 +19,11 @@ class DuelistPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.red[900],
         title: const Text('Duelist'),
+        actions: [
+          Image.asset('images/AppberIcon.png'),
+        ],
       ),
+
       body: Stack(
         children: [
           Container(
