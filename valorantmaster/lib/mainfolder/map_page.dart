@@ -9,6 +9,7 @@ import 'package:valorantmaster/mapfolder/ascent.dart';
 import 'package:valorantmaster/mapfolder/bind.dart';
 import 'package:valorantmaster/mapfolder/breeze.dart';
 import 'package:valorantmaster/mapfolder/fracture.dart';
+import 'package:page_transition/page_transition.dart'; //問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
 
 class MapPage extends StatelessWidget {
   const MapPage({Key? key}) : super(key: key);
@@ -40,8 +41,10 @@ class MapPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const SunsetPage()),
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const SunsetPage(),
+                      ),
                     );
                   },
                   child: Image.asset(
@@ -56,8 +59,10 @@ class MapPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const AscentPage()),
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const AscentPage(),
+                      ),
                     );
                   },
                   child: Image.asset(
@@ -74,7 +79,10 @@ class MapPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const BindPage()),
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const BindPage(),
+                      ),
                     );
                   },
                   child: Image.asset(
@@ -91,8 +99,10 @@ class MapPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const BreezePage()),
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const BreezePage(),
+                      ),
                     );
                   },
                   child: Image.asset(
@@ -107,8 +117,10 @@ class MapPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const FracturePage()),
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const FracturePage(),
+                      ),
                     );
                   },
                   child: Image.asset(
@@ -123,8 +135,10 @@ class MapPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const HavenPage()),
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const HavenPage(),
+                      ),
                     );
                   },
                   child: Image.asset(
@@ -139,8 +153,10 @@ class MapPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const IceboxPage()),
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const IceboxPage(),
+                      ),
                     );
                   },
                   child: Image.asset(
@@ -155,8 +171,10 @@ class MapPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const LotusPage()),
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const LotusPage(),
+                      ),
                     );
                   },
                   child: Image.asset(
@@ -170,8 +188,10 @@ class MapPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const PearlPage()),
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const PearlPage(),
+                      ),
                     );
                   },
                   child: Image.asset(
@@ -185,8 +205,10 @@ class MapPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const SpritPage()),
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const SpritPage(),
+                      ),
                     );
                   },
                   child: Image.asset(
