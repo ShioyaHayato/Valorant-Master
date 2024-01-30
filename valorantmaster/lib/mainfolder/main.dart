@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:valorantmaster/mainfolder/agent_page.dart';
 import 'package:valorantmaster/mainfolder/map_page.dart';
 import 'package:valorantmaster/mainfolder/wepon_page.dart';
-import 'package:page_transition/page_transition.dart';
+import 'package:page_transition/page_transition.dart'; //問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
 
 //インポートは各ページのdartをインポートして見にいけるようにする
 

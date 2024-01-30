@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-//agent_pageに書いてある
 
 class MapPage extends StatelessWidget {
   const MapPage({Key? key}) : super(key: key);
@@ -7,13 +6,13 @@ class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( 
+      appBar: AppBar(
         backgroundColor: Colors.red[900],
         title: const Text('Map'),
         actions: [
           Image.asset('images/AppberIcon.png'),
         ],
-      ), 
+      ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -21,7 +20,45 @@ class MapPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: const Center(),
+        child: SingleChildScrollView(
+          child: Center(
+        child: Column(
+          children: [
+            const SizedBox(height: 100),
+            Image.asset('images/Duelist1.png',//Haven
+              fit: BoxFit.cover,
+              alignment: Alignment.center,
+            ), 
+            const SizedBox(height: 20), 
+            Image.asset('images/Agent.png',//Icebox
+              fit: BoxFit.cover,
+              alignment: Alignment.center,
+            ), 
+            const SizedBox(height: 20), 
+            Image.asset('images/Agent.png',//Split
+              fit: BoxFit.cover,
+              alignment: Alignment.center,
+            ), 
+            const SizedBox(height: 20), 
+            Image.asset('images/Agent.png',
+              fit: BoxFit.cover,
+              alignment: Alignment.center,
+            ),
+            const SizedBox(height: 20), 
+            Image.asset('images/Agent.png',
+              fit: BoxFit.cover,
+              alignment: Alignment.center,
+            ),
+            const SizedBox(height: 20), 
+            Image.asset('images/Agent.png',
+              fit: BoxFit.cover,
+              alignment: Alignment.center,
+            ),
+            const SizedBox(height: 100),
+          ],
+        ),
+      ),
+      ),
       ),
     );
   }
