@@ -3,6 +3,8 @@ import 'package:valorantmaster/agentfolder/a_mainfolder/a_Initiator_page.dart';
 import 'package:valorantmaster/agentfolder/a_mainfolder/a_controller_page.dart';
 import 'package:valorantmaster/agentfolder/a_mainfolder/a_duelist_page.dart';
 import 'package:valorantmaster/agentfolder/a_mainfolder/a_sentinel_page.dart';
+import 'package:page_transition/page_transition.dart';
+
 
 //main.dartをインポートすることで、agent_pageからでもmainの情報を見に行くことが出来る
 
@@ -40,8 +42,10 @@ class AgentPage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const DuelistPage()),
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const DuelistPage(),
+                    ),
                   );
                 },
               ),
@@ -58,9 +62,11 @@ class AgentPage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const SentinelPage()),
-                  );
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const SentinelPage(),
+                    ),
+                    );
                 },
               ),
             ),
@@ -76,9 +82,11 @@ class AgentPage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const InitiatorPage()),
-                  );
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const InitiatorPage(),
+                    ),
+                    );
                 },
               ),
             ),
@@ -94,9 +102,11 @@ class AgentPage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const ControllerPage()),
-                  );
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const ControllerPage(),
+                    ),
+                    );
                 },
               ),
             ),
