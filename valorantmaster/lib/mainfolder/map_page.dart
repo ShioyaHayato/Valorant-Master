@@ -25,17 +25,18 @@ class MapPage extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 100),
-            Image.asset('images/Sunset.png',//Haven
+            Image.asset('images/Sunset.png',
+              fit: BoxFit.cover,
+              alignment: Alignment.center,
+              
+            ), 
+            const SizedBox(height: 20), 
+            Image.asset('images/Ascent.png',
               fit: BoxFit.cover,
               alignment: Alignment.center,
             ), 
             const SizedBox(height: 20), 
-            Image.asset('images/Ascent.png',//Icebox
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-            ), 
-            const SizedBox(height: 20), 
-            Image.asset('images/Bind.png',//Split
+            Image.asset('images/Bind.png',
               fit: BoxFit.cover,
               alignment: Alignment.center,
             ), 

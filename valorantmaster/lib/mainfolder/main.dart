@@ -35,6 +35,7 @@ class HomePage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
+        
         child: Column(
           children: [
             Center(
