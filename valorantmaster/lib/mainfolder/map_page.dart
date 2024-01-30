@@ -25,7 +25,7 @@ class MapPage extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 100),
-            Image.asset('images/Duelist1.png',//Haven
+            Image.asset('images/Sunset.png',//Haven
               fit: BoxFit.cover,
               alignment: Alignment.center,
             ), 
