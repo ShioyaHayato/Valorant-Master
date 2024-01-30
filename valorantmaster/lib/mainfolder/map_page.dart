@@ -1,4 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:valorantmaster/mapfolder/haven.dart';
+import 'package:valorantmaster/mapfolder/icebox.dart';
+import 'package:valorantmaster/mapfolder/lotus.dart';
+import 'package:valorantmaster/mapfolder/pearl.dart';
+import 'package:valorantmaster/mapfolder/sprit.dart';
+import 'package:valorantmaster/mapfolder/sunset.dart';
+import 'package:valorantmaster/mapfolder/ascent.dart';
+import 'package:valorantmaster/mapfolder/bind.dart';
+import 'package:valorantmaster/mapfolder/breeze.dart';
+import 'package:valorantmaster/mapfolder/fracture.dart';
 
 class MapPage extends StatelessWidget {
   const MapPage({Key? key}) : super(key: key);
@@ -22,64 +32,174 @@ class MapPage extends StatelessWidget {
         ),
         child: SingleChildScrollView(
           child: Center(
-        child: Column(
-          children: [
-            const SizedBox(height: 100),
-            Image.asset('images/Sunset.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-              
-            ), 
-            const SizedBox(height: 20), 
-            Image.asset('images/Ascent.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-            ), 
-            const SizedBox(height: 20), 
-            Image.asset('images/Bind.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-            ), 
-            const SizedBox(height: 20), 
-            Image.asset('images/Breeze.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
+            child: Column(
+              children: [
+                const SizedBox(height: 100),
+                // Wrap the Ascent image with GestureDetector
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SunsetPage()),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Sunset.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+                const SizedBox(height: 20),
+
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AscentPage()),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Ascent.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+                const SizedBox(height: 20),
+
+//here
+
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const BindPage()),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Bind.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+//here
+
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const BreezePage()),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Breeze.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const FracturePage()),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Fracture.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HavenPage()),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Haven.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const IceboxPage()),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Icebox.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LotusPage()),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Lotus.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PearlPage()),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Pearl.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SpritPage()),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Sprit.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+                const SizedBox(height: 100),
+              ],
             ),
-            const SizedBox(height: 20), 
-            Image.asset('images/Fracture.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-            ),
-            const SizedBox(height: 20), 
-            Image.asset('images/Haven.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-            ),
-            const SizedBox(height: 20), 
-            Image.asset('images/Icebox.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-            ),
-            const SizedBox(height: 20), 
-            Image.asset('images/Lotus.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-            ),
-            const SizedBox(height: 20), 
-            Image.asset('images/Pearl.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-            ),
-            const SizedBox(height: 20), 
-            Image.asset('images/Sprit.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-            ),
-            const SizedBox(height: 100),
-          ],
+          ),
         ),
-      ),
-      ),
       ),
     );
   }
