@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {},
                   child: Image.asset(
-                    'images/VmIcon.png',
+                    'images/vmIcon.png',
                     width: 100,
                     height: 100,
                   ),
