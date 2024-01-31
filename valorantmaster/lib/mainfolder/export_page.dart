@@ -41,7 +41,7 @@ class _RecordListPageState extends State<RecordListPage> {
         character: characters[index],
         kda: kdas[index],
         map: maps[index],
-        win: wins[index],
+        win: wins[index]!,
       ),
     );
 

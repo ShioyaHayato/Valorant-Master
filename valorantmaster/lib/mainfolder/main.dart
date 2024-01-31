@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:valorantmaster/mainfolder/agent_page.dart';
+import 'package:valorantmaster/mainfolder/deta_page.dart';
+import 'package:valorantmaster/mainfolder/export_page.dart';
 import 'package:valorantmaster/mainfolder/map_page.dart';
 import 'package:valorantmaster/mainfolder/wepon_page.dart';
 import 'package:page_transition/page_transition.dart'; //問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
@@ -126,7 +128,7 @@ class HomePage extends StatelessWidget {
                     context,
                     PageTransition(
                       type: PageTransitionType.rightToLeft,
-                      child: const AgentPage(),
+                      child: const RecordInputPage(),
                     ),
                   );
                 },
@@ -146,7 +148,7 @@ SizedBox(width: 20),
                     context,
                     PageTransition(
                       type: PageTransitionType.rightToLeft,
-                      child: const AgentPage(),
+                      child: const RecordListPage(),
                     ),
                   );
                 },
