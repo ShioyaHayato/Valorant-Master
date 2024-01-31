@@ -13,18 +13,23 @@ class HundGunPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.red[900], title: const Text('HundGun')),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/MainPage.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              children: [
+          backgroundColor: Colors.red[900], title: const Text('HundGun'),
+          actions: [
+          Image.asset('images/AppberIcon.png'),
+        ],
+      ),
+     body: Stack(
+  children: [
+    Positioned.fill(
+      child: Image.asset(
+        'images/MainPage.png',
+        fit: BoxFit.cover,
+      ),
+    ),
+    Center(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
                 const SizedBox(height: 100),
                 // Wrap the Ascent image with GestureDetector
                 GestureDetector(
@@ -116,7 +121,10 @@ class HundGunPage extends StatelessWidget {
             ),
           ),
         ),
-      ),
+  ]
+     ),
+     
     );
+    
   }
 }

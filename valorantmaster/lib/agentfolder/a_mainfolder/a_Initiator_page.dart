@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+<<<<<<< Updated upstream
+
+//main.dartをインポートすることで、agent_pageからでもmainの情報を見に行くことが出来る
+
+=======
+import 'package:page_transition/page_transition.dart';    //問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
 import 'package:valorantmaster/agentfolder/initiator/breach.dart';
 import 'package:valorantmaster/agentfolder/initiator/fade.dart';
 import 'package:valorantmaster/agentfolder/initiator/gekko.dart';
 import 'package:valorantmaster/agentfolder/initiator/kayo.dart';
 import 'package:valorantmaster/agentfolder/initiator/skye.dart';
-import 'package:valorantmaster/agentfolder/initiator/sova.dart';
-
-//main.dartをインポートすることで、agent_pageからでもmainの情報を見に行くことが出来る
-
+import 'package:valorantmaster/agentfolder/initiator/sova.dart'; 
+>>>>>>> Stashed changes
 class InitiatorPage extends StatelessWidget {
   const InitiatorPage({Key? key}) : super(key: key);
 
@@ -15,75 +19,156 @@ class InitiatorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+<<<<<<< Updated upstream
+          backgroundColor: Colors.red[900], //colorコードは#fffffじゃない、ややこし
+          title: const Text('Initiator') //フォントを変更したい todo:
+          ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/MainPage.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: const Center(),
+=======
         backgroundColor: Colors.red[900],
-        title: const Text('Initator'),
+        title: const Text('Initiator'),
         actions: [
           Image.asset('images/AppberIcon.png'),
         ],
-      ),     
-      body: Stack(
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/MainPage.png'),
-                fit: BoxFit.cover,
-              ),
-            ),
+      ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/MainPage.png'),
+            fit: BoxFit.cover,
           ),
-          GridView.count(
-            crossAxisCount: 2,
-            mainAxisSpacing: 20,
-            crossAxisSpacing: 20,
-            children: [
-              for (int i = 1; i < 9; i++)
+        ),
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                const SizedBox(height: 100),
+                // Wrap the Ascent image with GestureDetector
                 GestureDetector(
                   onTap: () {
-                    if (i == 1) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const SovaPage()),
-                      );
-                    }
-                     else if (i == 2) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const GekkoPage()),
-            );
-          }
-           else if (i == 3) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SkyePage()),
-            );
-          }
-           else if (i == 4) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const KayoPage()),
-            );
-          }
-           else if (i == 5) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const FadePage()),
-            );
-          }
-            else if (i == 6) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const BreachPage()),
-            );
-          }
-          //8人目のデュエリストが出たら追加する
-
-
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const SovaPage(),
+                      ),
+                    );
                   },
-                  child: Image.asset('images/Initiator$i.png'),
+                  child: Image.asset(
+                    'images/Initiator1.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
                 ),
-            ],
+                const SizedBox(height: 20),
+
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const GekkoPage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Initiator2.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+                const SizedBox(height: 20),
+
+//here
+
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const SkyePage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Initiator3.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+//here
+
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const KayoPage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Initiator4.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const FadePage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Initiator5.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+ 
+ const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const BreachPage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Initiator6.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+                
+                const SizedBox(height: 100),
+              ],
+            ),
           ),
-        ],
+        ),
+>>>>>>> Stashed changes
       ),
     );
   }

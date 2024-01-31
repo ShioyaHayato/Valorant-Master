@@ -8,7 +8,11 @@ class HeaviePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(backgroundColor: Colors.red[900], title: const Text('Heavie')),
+          AppBar(backgroundColor: Colors.red[900], title: const Text('Heavie'),
+          actions: [
+          Image.asset('images/AppberIcon.png'),
+        ],
+        ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

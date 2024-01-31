@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:valorantmaster/agentfolder/duelist/iso.dart';
 import 'package:valorantmaster/agentfolder/duelist/jett.dart';
 import 'package:valorantmaster/agentfolder/duelist/neon.dart';
 import 'package:valorantmaster/agentfolder/duelist/phoneix.dart';
 import 'package:valorantmaster/agentfolder/duelist/raze.dart';
 import 'package:valorantmaster/agentfolder/duelist/reyna.dart';
-import 'package:valorantmaster/agentfolder/duelist/yoru.dart';
-
-// 不要なインポートを削除
-// import 'package:flutter/cupertino.dart';
+import 'package:valorantmaster/agentfolder/duelist/yoru.dart'; //問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
 
 class DuelistPage extends StatelessWidget {
   const DuelistPage({Key? key}) : super(key: key);
@@ -19,11 +17,8 @@ class DuelistPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.red[900],
         title: const Text('Duelist'),
-        actions: [
-          Image.asset('images/AppberIcon.png'),
-        ],
       ),
-
+<<<<<<< Updated upstream
       body: Stack(
         children: [
           Container(
@@ -33,67 +28,155 @@ class DuelistPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
+=======
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/MainPage.png'),
+            fit: BoxFit.cover,
+>>>>>>> Stashed changes
           ),
-          GridView.count(
-            crossAxisCount: 2,
-            mainAxisSpacing: 20,
-            crossAxisSpacing: 20,
-            children: [
-              for (int i = 1; i < 9; i++)
+        ),
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                const SizedBox(height: 100),
+                // Wrap the Ascent image with GestureDetector
                 GestureDetector(
                   onTap: () {
-                    if (i == 1) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const JettPage()),
-                      );
-                    }
-                     else if (i == 2) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const RazePage()),
-            );
-          }
-           else if (i == 3) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ReynaPage()),
-            );
-          }
-           else if (i == 4) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const IsoPage()),
-            );
-          }
-           else if (i == 5) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const NeonPage()),
-            );
-          }
-           else if (i == 6) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const PhoneixPage()),
-            );
-          }
-           else if (i == 7) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const YoruPage()),
-            );
-          }
-
-          //8人目のデュエリストが出たら追加する
-
-
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const JettPage(),
+                      ),
+                    );
                   },
-                  child: Image.asset('images/Duelist$i.png'),
+                  child: Image.asset(
+                    'images/Duelist1.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
                 ),
-            ],
+                const SizedBox(height: 20),
+
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const RazePage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Duelist2.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+                const SizedBox(height: 20),
+
+//here
+
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const ReynaPage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Duelist3.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+//here
+
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const IsoPage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Duelist4.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const NeonPage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Duelist5.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+ 
+ const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const PhoneixPage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Duelist6.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const YoruPage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Duelist7.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+                const SizedBox(height: 100),
+              ],
+            ),
           ),
-        ],
+        ),
       ),
     );
   }

@@ -1,83 +1,155 @@
 import 'package:flutter/material.dart';
+<<<<<<< Updated upstream
+
+//main.dartをインポートすることで、agent_pageからでもmainの情報を見に行くことが出来る
+
+=======
+import 'package:page_transition/page_transition.dart';//問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
 import 'package:valorantmaster/agentfolder/sentinel/chamber.dart';
 import 'package:valorantmaster/agentfolder/sentinel/cypher.dart';
 import 'package:valorantmaster/agentfolder/sentinel/deadlock.dart';
 import 'package:valorantmaster/agentfolder/sentinel/killjoy.dart';
-import 'package:valorantmaster/agentfolder/sentinel/sage.dart';
-
-//main.dartをインポートすることで、agent_pageからでもmainの情報を見に行くことが出来る
-
+import 'package:valorantmaster/agentfolder/sentinel/sage.dart'; 
+>>>>>>> Stashed changes
 class SentinelPage extends StatelessWidget {
   const SentinelPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-       return Scaffold(
+    return Scaffold(
       appBar: AppBar(
+<<<<<<< Updated upstream
+          backgroundColor: Colors.red[900], //colorコードは#fffffじゃない、ややこし
+          title: const Text('Sentinel') //フォントを変更したい todo:
+          ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/MainPage.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: const Center(),
+=======
         backgroundColor: Colors.red[900],
-        title: const Text('Sentine'),
+        title: const Text('Sentinel'),
         actions: [
           Image.asset('images/AppberIcon.png'),
         ],
-      ),     
-      body: Stack(
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/MainPage.png'),
-                fit: BoxFit.cover,
-              ),
-            ),
+      ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/MainPage.png'),
+            fit: BoxFit.cover,
           ),
-          GridView.count(
-            crossAxisCount: 2,
-            mainAxisSpacing: 20,
-            crossAxisSpacing: 20,
-            children: [
-              for (int i = 1; i < 9; i++)
+        ),
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                const SizedBox(height: 100),
+                // Wrap the Ascent image with GestureDetector
                 GestureDetector(
                   onTap: () {
-                    if (i == 1) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const DeadlockPage()),
-                      );
-                    }
-                     else if (i == 2) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const CypherPage()),
-            );
-          }
-           else if (i == 3) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const KilljoyPage()),
-            );
-          }
-           else if (i == 4) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SagePage()),
-            );
-          }
-           else if (i == 5) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ChamberPage()),
-            );
-          }
-
-          //8人目のデュエリストが出たら追加する
-
-
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const DeadlockPage(),
+                      ),
+                    );
                   },
-                  child: Image.asset('images/Sentinel$i.png'),
+                  child: Image.asset(
+                    'images/Sentinel1.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
                 ),
-            ],
+                const SizedBox(height: 20),
+
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const CypherPage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Sentinel2.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+                const SizedBox(height: 20),
+
+//here
+
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const KilljoyPage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Sentinel3.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+//here
+
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const SagePage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Sentinel4.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const ChamberPage(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'images/Sentinel5.png',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
+ 
+ 
+                const SizedBox(height: 100),
+              ],
+            ),
           ),
-        ],
+        ),
+>>>>>>> Stashed changes
       ),
     );
   }
