@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:valorantmaster/mainfolder/agent_page.dart';
 import 'package:valorantmaster/mainfolder/map_page.dart';
 import 'package:valorantmaster/mainfolder/wepon_page.dart';
+import 'package:page_transition/page_transition.dart'; //問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
+
 //インポートは各ページのdartをインポートして見にいけるようにする
 
 //MyAppは名前は何でもいいけど、基本MyAppらしい、アプリを開いたときに一番最初に実行するコマンドが書かれてるっぽい
@@ -41,7 +43,7 @@ class HomePage extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {},
                   child: Image.asset(
-                    'images/VmIcon.png',
+                    'images/vmIcon.png',
                     width: 100,
                     height: 100,
                   ),
@@ -58,7 +60,10 @@ class HomePage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const AgentPage()),
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const AgentPage(),
+                    ),
                   );
                 },
               ),
@@ -75,7 +80,10 @@ class HomePage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const MapPage()),
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const MapPage(),
+                    ),
                   );
                 },
               ),
@@ -92,7 +100,10 @@ class HomePage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const WeponPage()),
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const WeponPage(),
+                    ),
                   );
                 },
               ),
