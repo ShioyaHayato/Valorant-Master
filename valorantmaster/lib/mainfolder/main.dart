@@ -108,9 +108,57 @@ class HomePage extends StatelessWidget {
                 },
               ),
             ),
-          ],
-        ),
-      ),
-    );
+            const SizedBox(height: 25),
+      Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+
+   Center(
+              child: GestureDetector(
+                child: Image.asset(
+                  'images/Agent.png',
+                  fit: BoxFit.fill,
+                  width: 160, // 希望の幅
+                  height: 70,
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const AgentPage(),
+                    ),
+                  );
+                },
+              ),
+            ),
+SizedBox(width: 20),
+ Center(
+              child: GestureDetector(
+                child: Image.asset(
+                  'images/Agent.png',
+                  fit: BoxFit.fill,
+                  width: 160, // 希望の幅
+                  height: 70,
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const AgentPage(),
+                    ),
+                  );
+                },
+              ),
+            ),
+
+
+  ],
+),
+    ],
+  ),
+),
+        );
   }
 }
