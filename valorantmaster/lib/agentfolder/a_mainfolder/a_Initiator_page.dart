@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< Updated upstream
 
-//main.dartをインポートすることで、agent_pageからでもmainの情報を見に行くことが出来る
-
-=======
 import 'package:page_transition/page_transition.dart';    //問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
 import 'package:valorantmaster/agentfolder/initiator/breach.dart';
 import 'package:valorantmaster/agentfolder/initiator/fade.dart';
@@ -11,7 +7,7 @@ import 'package:valorantmaster/agentfolder/initiator/gekko.dart';
 import 'package:valorantmaster/agentfolder/initiator/kayo.dart';
 import 'package:valorantmaster/agentfolder/initiator/skye.dart';
 import 'package:valorantmaster/agentfolder/initiator/sova.dart'; 
->>>>>>> Stashed changes
+
 class InitiatorPage extends StatelessWidget {
   const InitiatorPage({Key? key}) : super(key: key);
 
@@ -19,19 +15,7 @@ class InitiatorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-<<<<<<< Updated upstream
-          backgroundColor: Colors.red[900], //colorコードは#fffffじゃない、ややこし
-          title: const Text('Initiator') //フォントを変更したい todo:
-          ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/MainPage.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: const Center(),
-=======
+
         backgroundColor: Colors.red[900],
         title: const Text('Initiator'),
         actions: [
@@ -168,7 +152,7 @@ class InitiatorPage extends StatelessWidget {
             ),
           ),
         ),
->>>>>>> Stashed changes
+
       ),
     );
   }

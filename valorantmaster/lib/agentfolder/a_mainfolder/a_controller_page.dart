@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-<<<<<<< Updated upstream
 
-//main.dartをインポートすることで、agent_pageからでもmainの情報を見に行くことが出来る
-=======
 import 'package:page_transition/page_transition.dart';
 import 'package:valorantmaster/agentfolder/controller/astra.dart';
 import 'package:valorantmaster/agentfolder/controller/brimstone.dart';
 import 'package:valorantmaster/agentfolder/controller/harbor.dart';
 import 'package:valorantmaster/agentfolder/controller/omen.dart';
 import 'package:valorantmaster/agentfolder/controller/viper.dart'; //問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
->>>>>>> Stashed changes
+
 
 class ControllerPage extends StatelessWidget {
   const ControllerPage({Key? key}) : super(key: key);
@@ -18,19 +15,7 @@ class ControllerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-<<<<<<< Updated upstream
-          backgroundColor: Colors.red[900], //colorコードは#fffffじゃない、ややこし
-          title: const Text('Controller') //フォントを変更したい todo:
-          ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/MainPage.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: const Center(),
-=======
+
         backgroundColor: Colors.red[900],
         title: const Text('Controller'),
         actions: [
@@ -148,7 +133,6 @@ class ControllerPage extends StatelessWidget {
             ),
           ),
         ),
->>>>>>> Stashed changes
       ),
     );
   }

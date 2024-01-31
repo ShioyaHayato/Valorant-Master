@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-<<<<<<< Updated upstream
 
-//main.dartをインポートすることで、agent_pageからでもmainの情報を見に行くことが出来る
-
-=======
 import 'package:page_transition/page_transition.dart';//問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
 import 'package:valorantmaster/agentfolder/sentinel/chamber.dart';
 import 'package:valorantmaster/agentfolder/sentinel/cypher.dart';
 import 'package:valorantmaster/agentfolder/sentinel/deadlock.dart';
 import 'package:valorantmaster/agentfolder/sentinel/killjoy.dart';
 import 'package:valorantmaster/agentfolder/sentinel/sage.dart'; 
->>>>>>> Stashed changes
+
 class SentinelPage extends StatelessWidget {
   const SentinelPage({Key? key}) : super(key: key);
 
@@ -18,19 +14,7 @@ class SentinelPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-<<<<<<< Updated upstream
-          backgroundColor: Colors.red[900], //colorコードは#fffffじゃない、ややこし
-          title: const Text('Sentinel') //フォントを変更したい todo:
-          ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/MainPage.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: const Center(),
-=======
+
         backgroundColor: Colors.red[900],
         title: const Text('Sentinel'),
         actions: [
@@ -149,7 +133,7 @@ class SentinelPage extends StatelessWidget {
             ),
           ),
         ),
->>>>>>> Stashed changes
+
       ),
     );
   }

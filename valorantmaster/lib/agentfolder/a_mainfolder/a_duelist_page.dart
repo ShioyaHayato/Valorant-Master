@@ -18,23 +18,13 @@ class DuelistPage extends StatelessWidget {
         backgroundColor: Colors.red[900],
         title: const Text('Duelist'),
       ),
-<<<<<<< Updated upstream
-      body: Stack(
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/MainPage.png'),
-                fit: BoxFit.cover,
-              ),
-            ),
-=======
+
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('images/MainPage.png'),
             fit: BoxFit.cover,
->>>>>>> Stashed changes
+
           ),
         ),
         child: SingleChildScrollView(
