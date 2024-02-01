@@ -218,7 +218,9 @@ class MapPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 100),
+    
               ],
+              
             ),
           ),
         ),

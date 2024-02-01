@@ -3,7 +3,8 @@ import 'package:valorantmaster/mainfolder/agent_page.dart';
 import 'package:valorantmaster/mainfolder/map_page.dart';
 import 'package:valorantmaster/mainfolder/wepon_page.dart';
 import 'package:page_transition/page_transition.dart';
-//問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
+
+TextEditingController _nameController = TextEditingController(); //問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
 
 //インポートは各ページのdartをインポートして見にいけるようにする
 
@@ -110,9 +111,39 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 25),
-    
+                Row(
+  children: [
+    // 1枚目の画像
+    Expanded(
+      child: GestureDetector(
+        onTap: () {
+          // 画像1をタップした時の処理
+        },
+        child: Image.asset(
+          'images/Agent.png',
+          fit: BoxFit.cover,
+          alignment: Alignment.center,
+        ),
+      ),
+    ),
+    const SizedBox(width: 20), // 画像の間にスペースを追加
+    // 2枚目の画像
+    Expanded(
+      child: GestureDetector(
+        onTap: () {
+          // 画像2をタップした時の処理
+        },
+        child: Image.asset(
+          'images/Agent.png',
+          fit: BoxFit.cover,
+          alignment: Alignment.center,
+        ),
+      ),
+    ),
+  ],
+),
 
-
+const SizedBox(height: 100),
   
           ]
     
