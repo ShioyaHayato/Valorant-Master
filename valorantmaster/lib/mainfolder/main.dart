@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:valorantmaster/mainfolder/agent_page.dart';
-import 'package:valorantmaster/mainfolder/deta_page.dart';
-import 'package:valorantmaster/mainfolder/export_page.dart';
 import 'package:valorantmaster/mainfolder/map_page.dart';
 import 'package:valorantmaster/mainfolder/wepon_page.dart';
-import 'package:page_transition/page_transition.dart'; //問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
+import 'package:page_transition/page_transition.dart';
+
+TextEditingController _nameController = TextEditingController(); //問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
 
 //インポートは各ページのdartをインポートして見にいけるようにする
 
@@ -111,56 +111,16 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 25),
-      Row(
-  mainAxisAlignment: MainAxisAlignment.center,
-  children: [
-
-   Center(
-              child: GestureDetector(
-                child: Image.asset(
-                  'images/Agent.png',
-                  fit: BoxFit.fill,
-                  width: 160, // 希望の幅
-                  height: 70,
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.rightToLeft,
-                      child: const RecordInputPage(),
-                    ),
-                  );
-                },
-              ),
-            ),
-SizedBox(width: 20),
- Center(
-              child: GestureDetector(
-                child: Image.asset(
-                  'images/Agent.png',
-                  fit: BoxFit.fill,
-                  width: 160, // 希望の幅
-                  height: 70,
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.rightToLeft,
-                      child: const RecordListPage(),
-                    ),
-                  );
-                },
-              ),
-            ),
+    
 
 
-  ],
-),
-    ],
-  ),
-),
-        );
+  
+          ]
+    
+      ),
+      ),
+  );
+
+        
   }
 }
