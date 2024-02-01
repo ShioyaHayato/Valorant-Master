@@ -117,7 +117,7 @@ class HomePage extends StatelessWidget {
             Center(
               child: GestureDetector(
                 child: Image.asset(
-                  'images/Wepon.png',
+                  'images/History.png',
                   fit: BoxFit.fill,
                 ),
                 onTap: () {
