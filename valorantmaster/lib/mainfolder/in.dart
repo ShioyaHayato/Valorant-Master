@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:valorantmaster/mainfolder/out.dart';
 import 'reflection.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class InPage extends StatelessWidget {
   const InPage({super.key});
@@ -9,6 +10,9 @@ class InPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // 反省リスト
     List<Reflection> reflectionList = [];
+
+    // TextEditingController を使用して変数を定義
+    final TextEditingController _reflectionContentController = TextEditingController();
 
     return Scaffold(
       body: Stack(
@@ -33,20 +37,22 @@ class InPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const TextField(
+                  TextField(
+                    controller: _reflectionContentController, // 変数を TextField に関連付ける
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       hintText: '反省内容を入力してください', // 日本語で表示
                       hintStyle: TextStyle(color: Colors.white),
-                      border: OutlineInputBorder(),
+                      border: InputBorder.none,
+                      fillColor: Colors.white,
+                      hintMaxLines: 5, // 最大行数を5に設定
                     ),
-                    maxLines: 5,
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
                       // TextFieldに入力された内容を取得
-                      String content = _reflectionContentController.text;  // _reflectionContentController を使用
+                      String content = _reflectionContentController.text;
 
                       // 反省クラスのインスタンスを作成
                       Reflection reflection = Reflection(content, DateTime.now());
@@ -54,7 +60,13 @@ class InPage extends StatelessWidget {
                       // 反省リストに追加
                       reflectionList.add(reflection);
 
-                      // 保存処理
+                      // reflectionList の内容を String 型のリストに変換
+                      List<String> reflectionStringList = reflectionList.map((e) => e.toJson()).cast<String>().toList();
+
+                      // 変換後のリストを setStringList メソッドに渡す
+                      SharedPreferences.getInstance().then((prefs) {
+                        prefs.setStringList('reflections', reflectionStringList);
+                      });
 
                       // 画面遷移
                       Navigator.push(

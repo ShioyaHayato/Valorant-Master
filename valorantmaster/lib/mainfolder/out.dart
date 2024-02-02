@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
-import 'reflection.dart';  // 反省.dart ファイル名を変更
+import 'reflection.dart';
 
 class OutPage extends StatelessWidget {
-  const OutPage({super.key, required this.reflectionList}); // 反省リスト → reflectionList
+  const OutPage({super.key, required this.reflectionList});
 
-  final List<Reflection> reflectionList; // 反省 → Reflection
+  final List<Reflection> reflectionList;
+
+  // getter を正しく実装
+  Map<String, dynamic>? get reflectionContent {
+    if (reflectionList.isEmpty) {
+      return null;
+    }
+    return reflectionList[0].toJson();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +31,7 @@ class OutPage extends StatelessWidget {
               children: [
                 const SizedBox(height: 50),
                 const Text(
-                  'Reflections', // 反省一覧 → Reflections
+                  '反省内容', // 日本語で表示
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
@@ -35,15 +43,16 @@ class OutPage extends StatelessWidget {
                   shrinkWrap: true,
                   itemCount: reflectionList.length,
                   itemBuilder: (context, index) {
+                    Reflection reflection = reflectionList[index];
+                    String title = reflectionContent?['title'] ?? ''; // nullチェック
                     return ListTile(
                       title: Text(
-                        'Reflection ${index + 1}', // 反省内容 → Reflection
-                        style: const TextStyle(color: Colors.white),
+                        '反省 ${index + 1}',
                       ),
                       subtitle: Text(
-                        reflectionList[index].date.toString(), // 日付 → date
-                        style: const TextStyle(color: Colors.white),
+                        reflection.date.toString(),
                       ),
+                      trailing: Text(title), // 反省内容を表示
                     );
                   },
                 ),

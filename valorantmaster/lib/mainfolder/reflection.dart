@@ -29,4 +29,16 @@ class Reflection {
   String toString() {
     return 'Reflection content: $content, Reflection date: $date';
   }
+
+  // Convert to JSON
+  Map<String, dynamic> toJson() => {
+    'content': content,
+    'date': date.toIso8601String(),
+  };
+
+  // Factory constructor to create a Reflection object from JSON
+  factory Reflection.fromJson(Map<String, dynamic> json) => Reflection(
+    json['content'] as String,
+    DateTime.parse(json['date'] as String),
+  );
 }
