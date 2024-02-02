@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:valorantmaster/mainfolder/agent_page.dart';
 import 'package:valorantmaster/mainfolder/map_page.dart';
-import 'package:valorantmaster/mainfolder/tab.dart';
+import 'package:valorantmaster/mainfolder/ValorantHistory.dart';
 import 'package:valorantmaster/mainfolder/wepon_page.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -114,7 +114,7 @@ class HomePage extends StatelessWidget {
                         context,
                         PageTransition(
                           type: PageTransitionType.rightToLeft,
-                          child: TabPage(),
+                          child: ValorantHistoryPage(),
                         ),
                       );
                     },
