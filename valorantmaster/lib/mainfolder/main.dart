@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:valorantmaster/mainfolder/agent_page.dart';
 import 'package:valorantmaster/mainfolder/map_page.dart';
 import 'package:valorantmaster/mainfolder/ValorantHistory.dart';
-import 'package:valorantmaster/mainfolder/wepon_page.dart';
+import 'package:valorantmaster/mainfolder/weapon_page.dart';
 import 'package:page_transition/page_transition.dart';
 
 void main() => runApp(const MyApp());
@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      
       home: HomePage(),
     );
   }
@@ -88,7 +89,7 @@ class HomePage extends StatelessWidget {
                 Center(
                   child: GestureDetector(
                     child: Image.asset(
-                      'images/Wepon.png',
+                      'images/WeaponIcon.png',
                       fit: BoxFit.fill,
                     ),
                     onTap: () {
@@ -96,7 +97,7 @@ class HomePage extends StatelessWidget {
                         context,
                         PageTransition(
                           type: PageTransitionType.rightToLeft,
-                          child: const WeponPage(),
+                          child: const WeaponPage(),
                         ),
                       );
                     },
@@ -106,7 +107,7 @@ class HomePage extends StatelessWidget {
                 Center(
                   child: GestureDetector(
                     child: Image.asset(
-                      'images/History.png',
+                      'images/HistoryIcon.png',
                       fit: BoxFit.fill,
                     ),
                     onTap: () {

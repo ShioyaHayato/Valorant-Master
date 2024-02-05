@@ -21,7 +21,7 @@ class ValorantHistoryPage extends StatelessWidget {
           actions: [
           Image.asset('images/AppberIcon.png'),
         ],
-          backgroundColor: Colors.red[900],
+          backgroundColor: const Color(0xFFff4655),
           title: const Text("ValorantHistory"),
           bottom: TabBar(
             indicatorColor: Colors.white,

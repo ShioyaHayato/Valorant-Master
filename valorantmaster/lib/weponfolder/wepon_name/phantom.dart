@@ -8,7 +8,7 @@ class PhantomPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.red[900], title: const Text('Phantom')),
+          backgroundColor: const Color(0xFFff4655), title: const Text('Phantom')),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

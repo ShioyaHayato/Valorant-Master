@@ -60,7 +60,7 @@ class _OutPageState extends State<OutPage> {
     Expanded(
       child: Text(
         _texts[index],
-        style: TextStyle(color: Colors.black),
+        style: const TextStyle(color: Colors.black,fontFamily:"游ゴシック"),
       ),
     ),
     IconButton(

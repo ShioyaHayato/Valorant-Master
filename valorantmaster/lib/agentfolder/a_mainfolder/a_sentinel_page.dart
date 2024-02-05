@@ -15,7 +15,7 @@ class SentinelPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
 
-        backgroundColor: Colors.red[900],
+        backgroundColor: const Color(0xFFff4655),
         title: const Text('Sentinel'),
         actions: [
           Image.asset('images/AppberIcon.png'),

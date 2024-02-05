@@ -10,7 +10,7 @@ class ChamberPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(backgroundColor: Colors.red[900], title: const Text('Chamber')),
+          AppBar(backgroundColor: const Color(0xFFff4655),title: const Text('Chamber')),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

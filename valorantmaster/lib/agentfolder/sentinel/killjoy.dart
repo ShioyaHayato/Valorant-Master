@@ -10,7 +10,7 @@ class KilljoyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(backgroundColor: Colors.red[900], title: const Text('Killjoy')),
+          AppBar(backgroundColor: const Color(0xFFff4655), title: const Text('Killjoy')),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

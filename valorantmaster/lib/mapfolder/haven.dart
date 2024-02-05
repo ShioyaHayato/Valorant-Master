@@ -8,7 +8,7 @@ class HavenPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(backgroundColor: Colors.red[900], title: const Text('Haven')),
+          AppBar(backgroundColor: const Color(0xFFff4655), title: const Text('Haven')),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

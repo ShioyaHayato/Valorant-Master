@@ -10,7 +10,7 @@ class ShotGunPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.red[900], title: const Text('ShotGun'),
+          backgroundColor: const Color(0xFFff4655), title: const Text('ShotGun'),
           actions: [
           Image.asset('images/AppberIcon.png'),
         ],),

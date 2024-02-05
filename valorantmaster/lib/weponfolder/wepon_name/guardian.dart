@@ -8,7 +8,7 @@ class GuardianPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.red[900], title: const Text('Guardian')),
+          backgroundColor: const Color(0xFFff4655), title: const Text('Guardian')),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

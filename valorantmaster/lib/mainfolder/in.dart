@@ -34,7 +34,7 @@ class _InPageState extends State<InPage> {
                  const SizedBox(height: 90.0,),
                 TextField(
                   controller: _textController,
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white,),
                   maxLines: null,
                 ),
           ElevatedButton(
@@ -47,9 +47,11 @@ class _InPageState extends State<InPage> {
               // スナックバーを表示
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
-                  content: Text('保存しました',style: TextStyle(color: Colors.white),
+                  content: Text('保存しました',
+                  style: TextStyle(color: Colors.white,fontFamily:"游ゴシック"),
+                  
                   ),
-                  backgroundColor: Color(0xFFB71C1C),
+                  backgroundColor: Color(0xFFff4655),
                   duration: Duration(seconds: 2), // オプション: スナックバーの表示時間
                 ),
               );
