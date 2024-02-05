@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:valorantmaster/mainfolder/agent_page.dart';
 import 'package:valorantmaster/mainfolder/map_page.dart';
-import 'package:valorantmaster/mainfolder/wepon_page.dart';
-//インポートは各ページのdartをインポートして見にいけるようにする
+import 'package:valorantmaster/mainfolder/ValorantHistory.dart';
+import 'package:valorantmaster/mainfolder/weapon_page.dart';
+import 'package:page_transition/page_transition.dart';
 
-//MyAppは名前は何でもいいけど、基本MyAppらしい、アプリを開いたときに一番最初に実行するコマンドが書かれてるっぽい
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,19 +13,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      
       home: HomePage(),
     );
   }
 }
 
-//これはメインページにあたるもの
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //まだわからないけどアプリ全体の背景を黒から画像にする todo:
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -33,71 +32,99 @@ class HomePage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
-          children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 30),
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Image.asset(
-                    'images/VmIcon.png',
-                    width: 100,
-                    height: 100,
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: Image.asset(
+                        'images/vmIcon.png',
+                        width: 100,
+                        height: 100,
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
-            const SizedBox(height: 30),
-            Center(
-              child: GestureDetector(
-                child: Image.asset(
-                  'images/Agent.png',
-                  fit: BoxFit.fill,
+                const SizedBox(height: 30),
+                Center(
+                  child: GestureDetector(
+                    child: Image.asset(
+                      'images/AgentIcon.png',
+                      fit: BoxFit.fill,
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: const AgentPage(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const AgentPage()),
-                  );
-                },
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: GestureDetector(
-                child: Image.asset(
-                  'images/Map.png',
-                  fit: BoxFit.fill,
+                const SizedBox(height: 20),
+                Center(
+                  child: GestureDetector(
+                    child: Image.asset(
+                      'images/MapIcon.png',
+                      fit: BoxFit.fill,
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: const MapPage(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MapPage()),
-                  );
-                },
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: GestureDetector(
-                child: Image.asset(
-                  'images/Wepon.png',
-                  fit: BoxFit.fill,
+                const SizedBox(height: 20),
+                Center(
+                  child: GestureDetector(
+                    child: Image.asset(
+                      'images/WeaponIcon.png',
+                      fit: BoxFit.fill,
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: const WeaponPage(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const WeponPage()),
-                  );
-                },
-              ),
+                const SizedBox(height: 25),
+                Center(
+                  child: GestureDetector(
+                    child: Image.asset(
+                      'images/HistoryIcon.png',
+                      fit: BoxFit.fill,
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: ValorantHistoryPage(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                const SizedBox(height: 100),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

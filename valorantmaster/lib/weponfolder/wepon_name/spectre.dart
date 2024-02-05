@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 //agent_pageに書いてある
 
-class WeponPage extends StatelessWidget {
-  const WeponPage({Key? key}) : super(key: key);
+class SpectrePage extends StatelessWidget {
+  const SpectrePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          AppBar(backgroundColor: Colors.red[900], title: const Text('Wepons')),
+      appBar: AppBar(
+          backgroundColor: const Color(0xFFff4655), title: const Text('Spectre')),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
