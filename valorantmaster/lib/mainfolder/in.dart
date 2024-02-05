@@ -25,9 +25,13 @@ class _InPageState extends State<InPage> {
           ),
           Center(
             child: Column(
+              
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                
+                const Text('対戦の結果や反省点を記録してください',
+                style: TextStyle(color: Colors.white,fontSize: 20.10,),
+                 ),
+                 const SizedBox(height: 90.0,),
                 TextField(
                   controller: _textController,
                   style: const TextStyle(color: Colors.white),
@@ -51,7 +55,9 @@ class _InPageState extends State<InPage> {
               );
             },
             child: const Text('保存'),
+
           ),
+                 const SizedBox(height: 90.0,),
 
           
           ]

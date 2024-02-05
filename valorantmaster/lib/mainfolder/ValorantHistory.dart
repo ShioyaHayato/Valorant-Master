@@ -6,7 +6,8 @@ class ValorantHistoryPage extends StatelessWidget {
 
   final _tab = <Tab> [
     const Tab( text:'記入', icon: Icon(Icons.edit)),
-    const Tab( text:'記録', icon: Icon(Icons.description)),
+    const Tab( text:'記録', icon: Icon(Icons.description)
+    ),
   ];
 
    ValorantHistoryPage({super.key});
@@ -23,6 +24,8 @@ class ValorantHistoryPage extends StatelessWidget {
           backgroundColor: Colors.red[900],
           title: const Text("ValorantHistory"),
           bottom: TabBar(
+            indicatorColor: Colors.white,
+        labelColor: Colors.white,
             tabs: _tab,
           ),
         ),
