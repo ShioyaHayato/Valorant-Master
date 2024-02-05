@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:valorantmaster/agentfolder/a_mainfolder/a_Initiator_page.dart';
+import 'package:valorantmaster/agentfolder/a_mainfolder/a_initiator_page.dart';
 import 'package:valorantmaster/agentfolder/a_mainfolder/a_controller_page.dart';
 import 'package:valorantmaster/agentfolder/a_mainfolder/a_duelist_page.dart';
 import 'package:valorantmaster/agentfolder/a_mainfolder/a_sentinel_page.dart';
+import 'package:page_transition/page_transition.dart'; //問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
+
 
 //main.dartをインポートすることで、agent_pageからでもmainの情報を見に行くことが出来る
 
@@ -12,10 +14,13 @@ class AgentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Colors.red[900], //colorコードは#fffffじゃない、ややこし
-          title: const Text('Agents') //フォントを変更したい todo:
-          ),
+        appBar: AppBar( 
+        backgroundColor: Colors.red[900],
+        title: const Text('Agents'),
+        actions: [
+          Image.asset('images/AppberIcon.png'),
+        ],
+      ), 
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -37,8 +42,10 @@ class AgentPage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const DuelistPage()),
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const DuelistPage(),
+                    ),
                   );
                 },
               ),
@@ -55,9 +62,11 @@ class AgentPage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const SentinelPage()),
-                  );
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const SentinelPage(),
+                    ),
+                    );
                 },
               ),
             ),
@@ -73,9 +82,11 @@ class AgentPage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const InitiatorPage()),
-                  );
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const InitiatorPage(),
+                    ),
+                    );
                 },
               ),
             ),
@@ -91,9 +102,11 @@ class AgentPage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const ControllerPage()),
-                  );
+                    PageTransition(
+                      type: PageTransitionType.rightToLeft,
+                      child: const ControllerPage(),
+                    ),
+                    );
                 },
               ),
             ),
