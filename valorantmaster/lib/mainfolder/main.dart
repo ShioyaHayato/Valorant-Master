@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
                 Center(
                   child: GestureDetector(
                     child: Image.asset(
-                      'images/Agent.png',
+                      'images/AgentIcon.png',
                       fit: BoxFit.fill,
                     ),
                     onTap: () {
@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
                 Center(
                   child: GestureDetector(
                     child: Image.asset(
-                      'images/Map.png',
+                      'images/MapIcon.png',
                       fit: BoxFit.fill,
                     ),
                     onTap: () {

@@ -29,7 +29,7 @@ class ValorantHistoryPage extends StatelessWidget {
         body: const TabBarView(
           children: <Widget>[
             InPage(),
-            OutPage(reflectionList: [],),
+            OutPage(),
           ],
         ),
       ),
