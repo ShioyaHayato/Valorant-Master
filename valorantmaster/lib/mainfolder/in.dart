@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:valorantmaster/mainfolder/out.dart';
 
 class InPage extends StatefulWidget {
   const InPage({Key? key}) : super(key: key);
@@ -15,14 +14,25 @@ class _InPageState extends State<InPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Aページ'),
-      ),
-      body: Column(
+       body: Stack(
         children: [
-          TextField(
-            controller: _textController,
+          // 背景画像
+          Image.asset(
+            'images/MainPage.png',
+            fit: BoxFit.cover,
+            height: double.infinity,
+            width: double.infinity,
           ),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                
+                TextField(
+                  controller: _textController,
+                  style: const TextStyle(color: Colors.white),
+                  maxLines: null,
+                ),
           ElevatedButton(
             onPressed: () async {
               final prefs = await SharedPreferences.getInstance();
@@ -30,16 +40,25 @@ class _InPageState extends State<InPage> {
               texts.add(_textController.text);
               await prefs.setStringList('texts', texts);
 
-              // Bページに遷移
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const OutPage()),
+              // スナックバーを表示
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('保存しました',style: TextStyle(color: Colors.white),
+                  ),
+                  backgroundColor: Color(0xFFB71C1C),
+                  duration: Duration(seconds: 2), // オプション: スナックバーの表示時間
+                ),
               );
             },
             child: const Text('保存'),
           ),
-        ],
+
+          
+          ]
       ),
-    );
+      ),
+        ]
+       ),
+      );
   }
 }
