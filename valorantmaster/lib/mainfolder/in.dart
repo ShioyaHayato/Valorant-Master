@@ -29,8 +29,13 @@ class _InPageState extends State<InPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text('対戦の結果や反省点を記録してください',
-                style: TextStyle(color: Colors.white,fontSize: 20.10,),
-                 ),
+  style: TextStyle(
+    fontFamily: "游ゴシック",
+    fontSize: 24,
+    color: Colors.white,
+  ),
+),
+
                  const SizedBox(height: 90.0,),
                 TextField(
                   controller: _textController,
