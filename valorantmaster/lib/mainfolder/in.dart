@@ -30,7 +30,7 @@ class _InPageState extends State<InPage> {
               children: [
                 const Text('対戦の結果や反省点を記録してください',
   style: TextStyle(
-    fontFamily: "游ゴシック",
+    fontFamily: 'NotoSansJP',
     fontSize: 20,
     color: Colors.white,
   ),
@@ -39,7 +39,7 @@ class _InPageState extends State<InPage> {
                  const SizedBox(height: 90.0,),
                 TextField(
                   controller: _textController,
-                  style: const TextStyle(color: Colors.white,),
+                  style: const TextStyle(color: Colors.white,fontFamily: 'NotoSansJP',),
                   maxLines: null,
                 ),
           ElevatedButton(
@@ -55,7 +55,7 @@ class _InPageState extends State<InPage> {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                   content: Text('保存しました',
-                  style: TextStyle(color: Colors.white,fontFamily:"游ゴシック"),
+                  style: TextStyle(color: Colors.white,fontFamily: 'NotoSansJP',),
                   
                   ),
                   backgroundColor: Color(0xFFff4655),
@@ -68,7 +68,7 @@ class _InPageState extends State<InPage> {
   ),
            child: const Text(
     '保存',
-    style: TextStyle(fontFamily: "游ゴシック",color: Colors.white),
+    style: TextStyle(fontFamily: 'NotoSansJP',color: Colors.white),
   ),
   
 ),

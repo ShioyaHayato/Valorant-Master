@@ -27,6 +27,10 @@ class ValorantHistoryPage extends StatelessWidget {
             indicatorColor: Colors.white,
         labelColor: Colors.white,
             tabs: _tab,
+            labelStyle: const TextStyle(
+    fontSize: 16, // フォントサイズ
+    fontFamily: 'NotoSerifJP', // フォントファミリー
+  ),
           ),
         ),
         body: const TabBarView(
