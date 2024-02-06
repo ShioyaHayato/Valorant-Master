@@ -5,7 +5,6 @@ import 'package:valorantmaster/agentfolder/a_mainfolder/a_duelist_page.dart';
 import 'package:valorantmaster/agentfolder/a_mainfolder/a_sentinel_page.dart';
 import 'package:page_transition/page_transition.dart'; //問題にエラーが書いてあるけどverを落とすとlaunch出来なくなる
 
-
 //main.dartをインポートすることで、agent_pageからでもmainの情報を見に行くことが出来る
 
 class AgentPage extends StatelessWidget {
@@ -14,13 +13,13 @@ class AgentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar( 
+      appBar: AppBar(
         backgroundColor: const Color(0xFFff4655),
         title: const Text('Agents'),
         actions: [
           Image.asset('images/AppberIcon.png'),
         ],
-      ), 
+      ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -66,7 +65,7 @@ class AgentPage extends StatelessWidget {
                       type: PageTransitionType.rightToLeft,
                       child: const SentinelPage(),
                     ),
-                    );
+                  );
                 },
               ),
             ),
@@ -86,7 +85,7 @@ class AgentPage extends StatelessWidget {
                       type: PageTransitionType.rightToLeft,
                       child: const InitiatorPage(),
                     ),
-                    );
+                  );
                 },
               ),
             ),
@@ -106,7 +105,7 @@ class AgentPage extends StatelessWidget {
                       type: PageTransitionType.rightToLeft,
                       child: const ControllerPage(),
                     ),
-                    );
+                  );
                 },
               ),
             ),

@@ -29,11 +29,10 @@ class WeaponPage extends StatelessWidget {
           ),
         ),
         child: SingleChildScrollView(
-          // ここを追加
           child: Column(
             children: [
               const SizedBox(
-                height: 125,
+                height: 100,
               ),
               Center(
                 child: GestureDetector(
