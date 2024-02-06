@@ -31,7 +31,7 @@ class _InPageState extends State<InPage> {
                 const Text('対戦の結果や反省点を記録してください',
   style: TextStyle(
     fontFamily: "游ゴシック",
-    fontSize: 24,
+    fontSize: 20,
     color: Colors.white,
   ),
 ),
@@ -43,6 +43,7 @@ class _InPageState extends State<InPage> {
                   maxLines: null,
                 ),
           ElevatedButton(
+            
             onPressed: () async {
               final prefs = await SharedPreferences.getInstance();
               final texts = prefs.getStringList('texts') ?? [];
@@ -50,6 +51,7 @@ class _InPageState extends State<InPage> {
               await prefs.setStringList('texts', texts);
 
               // スナックバーを表示
+              // ignore: use_build_context_synchronously
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                   content: Text('保存しました',
@@ -61,9 +63,15 @@ class _InPageState extends State<InPage> {
                 ),
               );
             },
-            child: const Text('保存'),
-
-          ),
+  style: ElevatedButton.styleFrom(
+    backgroundColor: const Color(0xFFff4655),
+  ),
+           child: const Text(
+    '保存',
+    style: TextStyle(fontFamily: "游ゴシック",color: Colors.white),
+  ),
+  
+),
                  const SizedBox(height: 90.0,),
 
           
