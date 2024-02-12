@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:valorantmaster/mainfolder/out.dart';
 
 class InPage extends StatefulWidget {
   const InPage({Key? key}) : super(key: key);
@@ -10,11 +11,12 @@ class InPage extends StatefulWidget {
 
 class _InPageState extends State<InPage> {
   final TextEditingController _textController = TextEditingController();
+  final String _text = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       body: Stack(
+      body: Stack(
         children: [
           // 背景画像
           Image.asset(
@@ -25,61 +27,60 @@ class _InPageState extends State<InPage> {
           ),
           Center(
             child: Column(
-              
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text('対戦の結果や反省点を記録してください',
-  style: TextStyle(
-    fontFamily: 'NotoSansJP',
-    fontSize: 20,
-    color: Colors.white,
-  ),
-),
-
-                 const SizedBox(height: 90.0,),
+                    style: TextStyle(
+                      fontFamily: 'NotoSansJP',
+                      fontSize: 20,
+                      color: Colors.white,
+                    )),
+                const SizedBox(height: 90.0),
                 TextField(
                   controller: _textController,
-                  style: const TextStyle(color: Colors.white,fontFamily: 'NotoSansJP',),
+                  style: const TextStyle(
+                      color: Colors.white, fontFamily: 'NotoSansJP'),
                   maxLines: null,
                 ),
-          ElevatedButton(
-            
-            onPressed: () async {
-              final prefs = await SharedPreferences.getInstance();
-              final texts = prefs.getStringList('texts') ?? [];
-              texts.add(_textController.text);
-              await prefs.setStringList('texts', texts);
+                ElevatedButton(
+                  onPressed: () {
+                    // 入力された文字列を取得
+                    final String text = _textController.text;
 
-              // スナックバーを表示
-              // ignore: use_build_context_synchronously
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('保存しました',
-                  style: TextStyle(color: Colors.white,fontFamily: 'NotoSansJP',),
-                  
+                    // Stringクラスの処理
+                    final int length = text.length; // 文字列の長さを取得
+                    final List<String> words = text.split(' '); // 文字列を分割
+                    final int index = text.indexOf('word'); // 文字列を検索
+                    final String upperCaseText = text.toUpperCase(); // 文字列を変換
+
+                    // ...
+
+                    // スナックバーを表示
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('保存しました',
+                            style: TextStyle(
+                                color: Colors.white, fontFamily: 'NotoSansJP')),
+                        backgroundColor: Color(0xFFff4655),
+                        duration: Duration(seconds: 2), // オプション: スナックバーの表示時間
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFff4655),
                   ),
-                  backgroundColor: Color(0xFFff4655),
-                  duration: Duration(seconds: 2), // オプション: スナックバーの表示時間
+                  child: const Text(
+                    '保存',
+                    style: TextStyle(
+                        fontFamily: 'NotoSansJP', color: Colors.white),
+                  ),
                 ),
-              );
-            },
-  style: ElevatedButton.styleFrom(
-    backgroundColor: const Color(0xFFff4655),
-  ),
-           child: const Text(
-    '保存',
-    style: TextStyle(fontFamily: 'NotoSansJP',color: Colors.white),
-  ),
-  
-),
-                 const SizedBox(height: 90.0,),
-
-          
-          ]
+                const SizedBox(height: 90.0),
+              ],
+            ),
+          ),
+        ],
       ),
-      ),
-        ]
-       ),
-      );
+    );
   }
 }

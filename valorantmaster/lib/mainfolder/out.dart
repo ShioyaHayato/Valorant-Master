@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:valorantmaster/mainfolder/in.dart';
 
 class OutPage extends StatefulWidget {
   const OutPage({Key? key}) : super(key: key);
@@ -56,21 +57,21 @@ class _OutPageState extends State<OutPage> {
                   color: Colors.white.withOpacity(0.8),
                 ),
                 child: Row(
-  children: [
-    Expanded(
-      child: Text(
-        _texts[index],
-        style: const TextStyle(color: Colors.black,fontFamily: 'NotoSansJP',),
-      ),
-    ),
-    IconButton(
-      icon: const Icon(Icons.delete),
-      color: Colors.white,
-      onPressed: () => _deleteText(index),
-    ),
-  ],
-),
-
+                  children: [
+                    Expanded(
+                      child: Text(
+                        _texts[index],
+                        style: const TextStyle(
+                            color: Colors.black, fontFamily: 'NotoSansJP'),
+                      ),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.delete),
+                      color: Colors.white,
+                      onPressed: () => _deleteText(index),
+                    ),
+                  ],
+                ),
               );
             },
           ),
