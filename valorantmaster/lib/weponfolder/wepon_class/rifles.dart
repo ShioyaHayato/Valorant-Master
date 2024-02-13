@@ -29,7 +29,7 @@ class RiflesPage extends StatelessWidget {
         child: Column(
           children: [
                 const SizedBox(height: 100),
-                // Wrap the Ascent image with GestureDetector
+                
                 GestureDetector(
                   onTap: () {
                     Navigator.push(

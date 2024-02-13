@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:valorantmaster/mainfolder/out.dart';
 
 class InPage extends StatefulWidget {
   const InPage({Key? key}) : super(key: key);
@@ -11,7 +10,19 @@ class InPage extends StatefulWidget {
 
 class _InPageState extends State<InPage> {
   final TextEditingController _textController = TextEditingController();
-  final String _text = '';
+  final List<String> _texts = [];
+
+  late SharedPreferences prefs;
+
+  @override
+  void initState() {
+    super.initState();
+    _initPrefs();
+  }
+
+  Future<void> _initPrefs() async {
+    prefs = await SharedPreferences.getInstance();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +31,7 @@ class _InPageState extends State<InPage> {
         children: [
           // 背景画像
           Image.asset(
-            'images/MainPage.png',
+            'images/MainPage.png', 
             fit: BoxFit.cover,
             height: double.infinity,
             width: double.infinity,
@@ -43,26 +54,22 @@ class _InPageState extends State<InPage> {
                   maxLines: null,
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    // 入力された文字列を取得
+                  onPressed: () async {
+                    
                     final String text = _textController.text;
 
-                    // Stringクラスの処理
-                    final int length = text.length; // 文字列の長さを取得
-                    final List<String> words = text.split(' '); // 文字列を分割
-                    final int index = text.indexOf('word'); // 文字列を検索
-                    final String upperCaseText = text.toUpperCase(); // 文字列を変換
+                    
+                    _texts.add(text);
+                    await prefs.setStringList('texts', _texts);
 
-                    // ...
-
-                    // スナックバーを表示
+                    
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text('保存しました',
                             style: TextStyle(
                                 color: Colors.white, fontFamily: 'NotoSansJP')),
                         backgroundColor: Color(0xFFff4655),
-                        duration: Duration(seconds: 2), // オプション: スナックバーの表示時間
+                        duration: Duration(seconds: 2), 
                       ),
                     );
                   },

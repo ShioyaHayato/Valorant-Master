@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:valorantmaster/mainfolder/in.dart';
 
 class OutPage extends StatefulWidget {
   const OutPage({Key? key}) : super(key: key);
@@ -30,7 +29,7 @@ class _OutPageState extends State<OutPage> {
     final prefs = await SharedPreferences.getInstance();
     _texts.removeAt(index);
     await prefs.setStringList('texts', _texts);
-    setState(() {}); // リストの変更を反映させる
+    setState(() {}); 
   }
 
   @override
@@ -40,7 +39,7 @@ class _OutPageState extends State<OutPage> {
         children: [
           // 背景画像
           Image.asset(
-            'images/MainPage.png', // 你的背景圖片位置
+            'images/MainPage.png',
             fit: BoxFit.cover,
             height: double.infinity,
             width: double.infinity,
@@ -49,28 +48,15 @@ class _OutPageState extends State<OutPage> {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             itemCount: _texts.length,
             itemBuilder: (context, index) {
-              return Container(
-                margin: const EdgeInsets.symmetric(vertical: 8.0),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.circular(8.0),
-                  color: Colors.white.withOpacity(0.8),
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        _texts[index],
-                        style: const TextStyle(
-                            color: Colors.black, fontFamily: 'NotoSansJP'),
-                      ),
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.delete),
-                      color: Colors.white,
-                      onPressed: () => _deleteText(index),
-                    ),
-                  ],
+              return ListTile(
+                title: Text(_texts[index],
+                    style: const TextStyle(
+                        color: Colors.black, fontFamily: 'NotoSansJP')),
+                trailing: IconButton(
+                  icon: const Icon(Icons.delete),
+                  color: Colors.white,
+                  onPressed: () => _deleteText(
+                      _texts.indexOf(_texts[index])), 
                 ),
               );
             },
