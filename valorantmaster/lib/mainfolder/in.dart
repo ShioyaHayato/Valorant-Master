@@ -46,6 +46,7 @@ class _InPageState extends State<InPage> {
                   onPressed: () {
                     // 入力された文字列を取得
                     final String text = _textController.text;
+<<<<<<< Updated upstream
 
                     // Stringクラスの処理
                     final int length = text.length; // 文字列の長さを取得
@@ -65,6 +66,10 @@ class _InPageState extends State<InPage> {
                         duration: Duration(seconds: 2), // オプション: スナックバーの表示時間
                       ),
                     );
+=======
+                    await prefs.setString('text', text);
+                    Navigator.of(context).pushNamed('/out');
+>>>>>>> Stashed changes
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFff4655),
