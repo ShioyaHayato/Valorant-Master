@@ -114,7 +114,7 @@ class HomePage extends StatelessWidget {
                       Navigator.push(
                         context,
                         PageTransition(
-                          type: PageTransitionType.rightToLeft,
+                          type: PageTransitionType.rightToLeft, //sda
                           child: ValorantHistoryPage(),
                         ),
                       );
