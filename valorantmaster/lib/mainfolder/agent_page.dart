@@ -20,13 +20,17 @@ class AgentPage extends StatelessWidget {
           Image.asset('images/AppberIcon.png'),
         ],
       ),
+      
       body: Container(
+        
         decoration: const BoxDecoration(
+          
           image: DecorationImage(
             image: AssetImage('images/MainPage.png'),
             fit: BoxFit.cover,
           ),
         ),
+        child: SingleChildScrollView(
         child: Column(
           children: [
             const SizedBox(
@@ -111,6 +115,7 @@ class AgentPage extends StatelessWidget {
             ),
           ],
         ),
+      ),
       ),
     );
   }
