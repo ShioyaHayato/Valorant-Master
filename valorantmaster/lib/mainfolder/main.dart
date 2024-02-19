@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:valorantmaster/mainfolder/agent_page.dart';
 import 'package:valorantmaster/mainfolder/map_page.dart';
 import 'package:valorantmaster/mainfolder/ValorantHistory.dart';
+import 'package:valorantmaster/mainfolder/s_class_string.dart';
 import 'package:valorantmaster/mainfolder/weapon_page.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -60,7 +61,7 @@ class HomePage extends StatelessWidget {
                         context,
                         PageTransition(
                           type: PageTransitionType.rightToLeft,
-                          child: const AgentPage(),
+                          child: const MyHomePageD(),
                         ),
                       );
                     },

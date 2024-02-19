@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:shared_preferences/shared_preferences.dart';
 
 class InPage extends StatefulWidget {
@@ -63,6 +64,7 @@ class _InPageState extends State<InPage> {
                     await prefs.setStringList('texts', _texts);
 
                     
+                    // ignore: use_build_context_synchronously
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text('保存しました',

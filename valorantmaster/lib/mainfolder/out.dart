@@ -8,8 +8,12 @@ class OutPage extends StatefulWidget {
   State<OutPage> createState() => _OutPageState();
 }
 
+
+
 class _OutPageState extends State<OutPage> {
   List<String> _texts = [];
+
+
 
 //例外が発生しました
 //_TypeError (type 'String' is not a subtype of type 'List<dynamic>?' in type cast)
