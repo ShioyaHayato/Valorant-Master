@@ -20,102 +20,102 @@ class AgentPage extends StatelessWidget {
           Image.asset('images/AppberIcon.png'),
         ],
       ),
-      
       body: Container(
-        
         decoration: const BoxDecoration(
-          
           image: DecorationImage(
             image: AssetImage('images/MainPage.png'),
             fit: BoxFit.cover,
           ),
         ),
         child: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 125,
-            ),
-            Center(
-              child: GestureDetector(
-                child: Image.asset(
-                  'images/Duelist.png',
-                  fit: BoxFit.fill,
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.rightToLeft,
-                      child: const DuelistPage(),
-                    ),
-                  );
-                },
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 125,
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: GestureDetector(
-                child: Image.asset(
-                  'images/Sentinel.png',
-                  fit: BoxFit.fill,
+              Center(
+                child: GestureDetector(
+                  child: Image.asset(
+                    'images/Duelist.png',
+                    fit: BoxFit.fill,
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const DuelistPage(),
+                      ),
+                    );
+                  },
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.rightToLeft,
-                      child: const SentinelPage(),
-                    ),
-                  );
-                },
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: GestureDetector(
-                child: Image.asset(
-                  'images/Initiator.png',
-                  fit: BoxFit.fill,
+              const SizedBox(
+                height: 20,
+              ),
+              Center(
+                child: GestureDetector(
+                  child: Image.asset(
+                    'images/Sentinel.png',
+                    fit: BoxFit.fill,
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const SentinelPage(),
+                      ),
+                    );
+                  },
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.rightToLeft,
-                      child: const InitiatorPage(),
-                    ),
-                  );
-                },
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: GestureDetector(
-                child: Image.asset(
-                  'images/Controller.png',
-                  fit: BoxFit.fill,
+              const SizedBox(
+                height: 20,
+              ),
+              Center(
+                child: GestureDetector(
+                  child: Image.asset(
+                    'images/Initiator.png',
+                    fit: BoxFit.fill,
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const InitiatorPage(),
+                      ),
+                    );
+                  },
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.rightToLeft,
-                      child: const ControllerPage(),
-                    ),
-                  );
-                },
               ),
-            ),
-          ],
+              const SizedBox(
+                height: 20,
+              ),
+              Center(
+                child: GestureDetector(
+                  child: Image.asset(
+                    'images/Controller.png',
+                    fit: BoxFit.fill,
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const ControllerPage(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 125,
+              ),
+            ],
+          ),
         ),
-      ),
       ),
     );
   }
